@@ -3,27 +3,26 @@ import time
 from datetime import date, timedelta
 import pandas as pd
 import datetime
-#accepted date= date
-#date='04/20/2015'
-##filename='04202015'
 count=0
 
-def testpgm():
-    
+
+def testpgm(): 
+    #read Date File 
     date =open('datenext.txt','r').read()
     print(dat)
-    #date_1 = datetime.datetime.strptime('date1', "%m/%d/%y")
-    #print(date_1)
-    #end_date = date_1 + datetime.timedelta(days=1)
-    #print(end_date)
+    #convert in Date -- enddate
     enddate = pd.to_datetime(date) + pd.DateOffset(days=1)
     print(enddate)
+    #Date format to '/"
     date2 = enddate.strftime('%m/%d/%Y')
     print(date2)
+    #removing "/" from date to create file name 
     filename1 = enddate.strftime('%m%d%Y')
     print(filename1)                            
     #date1.close()
+    #read Date File 
     file1 = open('datenext.txt','w')
+    #New Date write in file
     file1.write(date2)
     #file1.close()
 
