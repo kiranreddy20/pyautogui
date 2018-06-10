@@ -26,32 +26,40 @@ def testpgm():
     file1.write(date2)
     #file1.close()
 
-def autoclose():    
+def autoclose(): 
+    #mouse moving to 'X' place
     pyautogui.moveTo (778, 140)
+    # mouse click to close
     pyautogui.click()
+    # keyborad function (alt+f4) to cole completely
     pyautogui.keyDown('alt')
     pyautogui.press('f4')
     pyautogui.keyUp('alt')
+    #keyboard key "y"
     pyautogui.press('y')
 
 def autoopen():
+    #mouse moving to 'X' place
     pyautogui.moveTo (1188, 152)
+    # mouse click to open application
     pyautogui.doubleClick()
-    time.sleep(20)
-    pyautogui.typewrite('RM')
+    time.sleep(10)
+    pyautogui.typewrite('your_User_name')
     pyautogui.press('tab')
-    pyautogui.typewrite('6699')
+    pyautogui.typewrite('your_Password')
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.press('enter')
     time.sleep(5)
+    #mouse moving to 'X' place
     pyautogui.moveTo (1905, 30)
     pyautogui.click()
     time.sleep(1)
     
 def autoprogram():
     print('started')
+    #read Date File 
     date1 =open('datenext.txt','r').read()
     date1.strip()
     
@@ -116,10 +124,12 @@ def autoprogram():
 autoprogram()
 
 while True:
+    #program continues run upto 30 time 
 
     if ( count < 30 ): 
       autoprogram()
       count = count + 1 
+    #if program reach 30 times it will close program,opeprogram,again make count 0
     if  ( count == 30):
         #testpgm()
         autoclose()
